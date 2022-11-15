@@ -16,9 +16,14 @@ public class Main {
 
         var districtsWith2Houses = getDistrictsWithGivenCountOfHouses(districts, 2);
         var sortedDistricts = sortByCountOfHouses(districts);
+        var sortedByName = sortByDistrictName(districts);
 
-        print(sortedDistricts);
+        print(sortedByName);
 
+    }
+
+    private static List<District> sortByDistrictName(List<District> districts){
+        return districts.stream().sorted(Comparator.comparing(x -> x.getName())).collect(Collectors.toList());
     }
 
     private static List<District> sortByCountOfHouses(List<District> districts){
